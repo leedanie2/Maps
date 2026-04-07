@@ -18,7 +18,7 @@ public class AssociationList<K, V> implements Map<K, V> {
         this.snd = snd;
     }
 }
-g
+
     private ArrayList<Pair> lst;
 
     public AssociationList (ArrayList lst) {
