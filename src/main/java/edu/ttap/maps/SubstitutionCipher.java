@@ -77,7 +77,7 @@ public class SubstitutionCipher {
         for(int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if(c == ' ') {
-                mapped = mapped + ' ';
+                mapped = mapped + " ";
             } else {
                 mapped = mapped + mapping.get(c);
             }
