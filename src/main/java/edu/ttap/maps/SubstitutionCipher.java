@@ -73,18 +73,23 @@ public class SubstitutionCipher {
      * @return the translated string
      */
     public static String translate(String s, Map<Character, Character> mapping) {
-        String mapped = null;
+        String mapped = "";
         for(int i = 0; i < s.length(); i++) {
-            mapped = mapped + mapping.get(s.charAt(i));
+            char c = s.charAt(i);
+            if(c == ' ') {
+                mapped = mapped + ' ';
+            } else {
+                mapped = mapped + mapping.get(c);
+            }
         }
         return mapped;
     }
 
     public static String textify(String textfile) throws FileNotFoundException {
-        String text = null;
+        String text = "";
         Scanner scan = new Scanner(new File(textfile));
         while(scan.hasNextLine()) {
-            text = text + scan.next();
+            text = text + scan.nextLine();
         }
         scan.close();
         return text;
