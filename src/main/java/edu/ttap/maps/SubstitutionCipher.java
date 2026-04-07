@@ -1,6 +1,7 @@
 package edu.ttap.maps;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
@@ -28,6 +29,7 @@ public class SubstitutionCipher {
             char value = scan.next().charAt(0);
             map.put(key, value);
         }
+        scan.close();
         return map;
     }
 
@@ -78,7 +80,20 @@ public class SubstitutionCipher {
         return mapped;
     }
 
+    public static String textify(String textfile) throws FileNotFoundException {
+        String text = null;
+        Scanner scan = new Scanner(new File(textfile));
+        while(scan.hasNextLine()) {
+            text = text + scan.next();
+        }
+        scan.close();
+        return text;
+    }
 
+    /**
+     * The main driver for the substitution cipher program.
+     * @param args the driver's command-line arguments
+     */
     /**
      * The main driver for the substitution cipher program.
      * @param args the driver's command-line arguments
@@ -90,11 +105,12 @@ public class SubstitutionCipher {
             System.exit(1);
         }
         String mode = args[0];
-        String path = args[1];
-        String text = args[2];
+        String cipher = args[1];
+        String textfile = args[2];
 
-        String output = "null";
-        Map<Character, Character> map = createCipher(path);
+        String output;
+        Map<Character, Character> map = createCipher(cipher);
+        String text = textify(textfile);
 
         if (mode.equals("encrypt")) {
             output = translate(text, map);
