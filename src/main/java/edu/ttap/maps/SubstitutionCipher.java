@@ -58,7 +58,7 @@ public class SubstitutionCipher {
      * @return the inverse mapping of the given cipher
      */
     public static Map<Character, Character> invertCipher(Map<Character, Character> cipher) {
-        ArrayList<Pair> lst = null;
+        ArrayList<Pair> lst = new ArrayList<>();
         Map<Character, Character> inverse = new AssociationList<>(lst);
         for(Map.Entry<Character, Character> entry : cipher.entrySet()) {
             inverse.put(entry.getValue(), entry.getKey());
