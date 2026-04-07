@@ -21,7 +21,7 @@ public class SubstitutionCipher {
      * @return the cipher as a mapping between characters
      */
     public static Map<Character, Character> createCipher(String filename) throws IOException {
-        ArrayList<Pair> lst = null;
+        ArrayList<Pair> lst = new ArrayList<>();
         AssociationList<Character, Character> map = new AssociationList<>(lst);
         Scanner scan = new Scanner(new File(filename));
         while(scan.hasNextLine()) {
