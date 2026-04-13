@@ -13,7 +13,8 @@ public class Main {
      * @param args the command-line arguments
      */
     public static void main(String[] args) throws IOException {
-        String[] arr = new String[]{"encrypt", "example-cipher.txt", "wikipedia.txt"};
-        SubstitutionCipher.main(arr);
+        //String[] enc = new String[]{"encrypt", "example-cipher.txt", "wikipedia.txt"};
+        String[] dec = new String[]{"decrypt", "example-cipher.txt", "wikipedia-encrypted-example.txt"};
+        SubstitutionCipher.main(dec);
     }
 }

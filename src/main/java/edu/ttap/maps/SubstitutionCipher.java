@@ -60,8 +60,8 @@ public class SubstitutionCipher {
     public static Map<Character, Character> invertCipher(Map<Character, Character> cipher) {
         ArrayList<Pair> lst = new ArrayList<>();
         Map<Character, Character> inverse = new AssociationList<>(lst);
-        for(Map.Entry<Character, Character> entry : cipher.entrySet()) {
-            inverse.put(entry.getValue(), entry.getKey());
+        for(char key : cipher.keySet()) {
+            inverse.put(cipher.get(key), key);
         }
         return inverse;
     }
@@ -95,10 +95,6 @@ public class SubstitutionCipher {
         return text;
     }
 
-    /**
-     * The main driver for the substitution cipher program.
-     * @param args the driver's command-line arguments
-     */
     /**
      * The main driver for the substitution cipher program.
      * @param args the driver's command-line arguments
