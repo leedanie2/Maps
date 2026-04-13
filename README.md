@@ -13,3 +13,9 @@ Authors: (_TODO: fill in your names here!_)
 *   (_TODO: fill in resources here!_)
 *   ...
 *   ...
+
+# Integer Maps
+## Part 1: Counting Letters
+Text: War and Peace
+URL: https://www.gutenberg.org/cache/epub/2600/pg2600.txt
+The frequency of letters is very consistent with that of the English alphabet. Most letters are within 1% of the known rate. This makes sense because the text is extensive, so we should approach the true frequency. 
