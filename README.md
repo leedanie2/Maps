@@ -10,9 +10,7 @@ Authors: (_TODO: fill in your names here!_)
 
 ## Resources
 
-*   (_TODO: fill in resources here!_)
-*   ...
-*   ...
+*   PM
 
 # Integer Maps
 ## Part 1: Counting Letters

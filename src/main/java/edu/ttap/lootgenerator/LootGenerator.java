@@ -100,10 +100,15 @@ public class LootGenerator {
 
     public static Affix getAffix(ArrayList<Affix> affixes) {
         Random rand = new Random();
-        if (rand.nextInt(2) == 0) { // 0 or 1
-            return null;
-        }
         return affixes.get(rand.nextInt(affixes.size()));
+    }
+
+    public static boolean has() {
+        Random rand = new Random();
+        if (rand.nextInt(2) == 0) { // 0 or 1
+            return true;
+        }
+        return false;
     }
 
     public static int getAffixStat(Affix affix) {
@@ -111,15 +116,56 @@ public class LootGenerator {
         return affix.mod1min + rand.nextInt(affix.mod1max - affix.mod1min + 1);
     }
 
+    /*
+    public static String generateAffix(Affix affix) {
+        
+    }
+    */
+
     public static void main(String[] args) throws FileNotFoundException {
         String datatype = args[0]; // data/large or data/small
         ArrayList<Monster> monsterList = MonsterList(datatype + "/monstats.txt");
-        HashMap<String, TreasureClass> treasureHash = TreasureHash(datatype + "TreasureClassEx.txt");
-        HashMap<String, Armor> armorHash = ArmorHash(datatype + "armor.txt");
+        HashMap<String, TreasureClass> treasureHash = TreasureHash(datatype + "/TreasureClassEx.txt");
+        HashMap<String, Armor> armorHash = ArmorHash(datatype + "/armor.txt");
         ArrayList<Affix> prefixes = AffixList(datatype + "/MagicPrefix.txt");
         ArrayList<Affix> suffixes = AffixList(datatype + "/MagicSuffix.txt");
 
-        
+        String continue_var = "y";
+        while (continue_var.equals("y")) {
+            Monster monster = randomMonster(monsterList);
+            String item = getTreasureClass(monster.TreasureClass, treasureHash);
+
+            System.out.println("Fighting" + monster.Class);
+            System.out.println("You have slain " + monster.Class);
+            System.out.println(monster.Class + " dropped:");
+            
+            Affix prefix = getAffix(prefixes);
+            Affix suffix = getAffix(suffixes);
+            boolean haspre = has();
+            boolean hassuff = has();
+
+            if (haspre) {
+                System.out.print(prefix.name + " ");
+            }
+            System.out.print(item);
+            if (hassuff) {
+                System.out.print(" " + suffix.name);
+            }
+            System.out.print("\n");
+
+            System.out.println(getStat(item, armorHash));
+            if (haspre) {
+                System.out.println(getAffixStat(prefix) + " " + prefix.mod1code);
+            }
+            if (hassuff) {
+                System.out.println(getAffixStat(suffix) + " " + suffix.mod1code);
+            }
+
+            System.out.println("Fight again [y/n]?");
+            Scanner answer = new Scanner(System.in);
+            continue_var = answer.toString();
+
+        }
     }
 }
 
