@@ -131,6 +131,7 @@ public class LootGenerator {
         ArrayList<Affix> suffixes = AffixList(datatype + "/MagicSuffix.txt");
 
         String continue_var = "y";
+        Scanner answer = new Scanner(System.in);
         while (continue_var.equals("y")) {
             Monster monster = randomMonster(monsterList);
             String item = getTreasureClass(monster.TreasureClass, treasureHash);
@@ -162,10 +163,9 @@ public class LootGenerator {
             }
 
             System.out.println("Fight again [y/n]?");
-            Scanner answer = new Scanner(System.in);
-            continue_var = answer.toString();
-
+            continue_var = answer.nextLine();
         }
+        answer.close();
     }
 }
 
