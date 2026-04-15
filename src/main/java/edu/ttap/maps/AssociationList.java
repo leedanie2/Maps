@@ -11,13 +11,13 @@ import java.util.Set;
  */
 public class AssociationList<K, V> implements Map<K, V> {
     public class Pair {
-    public K fst;
-    public V snd;
-    public Pair(K fst, V snd) {
-        this.fst = fst;
-        this.snd = snd;
+        public K fst;
+        public V snd;
+        public Pair(K fst, V snd) {
+            this.fst = fst;
+            this.snd = snd;
+        }
     }
-}
 
     private ArrayList<Pair> lst;
 

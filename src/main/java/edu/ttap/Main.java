@@ -17,7 +17,7 @@ public class Main {
         String[] dec = new String[]{"decrypt", "example-cipher.txt", "wikipedia-encrypted-example.txt"};
         SubstitutionCipher.main(dec);
         */
-       String[] arr = new String[]{"tolstoy.txt"};
+       String[] arr = new String[]{"plato.txt"};
        IntegerMaps.main(arr);
     }
 }
