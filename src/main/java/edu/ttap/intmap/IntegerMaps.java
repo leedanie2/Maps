@@ -41,7 +41,7 @@ public class IntegerMaps {
         for (int i = 0; i < 256; i++) {
             if (newCounter.lst[i] != null) {
                 for (Pair<Character, Integer> p : newCounter.lst[i]) {
-                    System.out.println(p.fst + " ")
+                    System.out.println(p.fst + " : " + p.snd + " ");
                 }
             }
         }
@@ -78,17 +78,16 @@ public class IntegerMaps {
     }
 }
 
+class Pair<K, V> {        
+    public K fst;
+    public V snd;
+    public Pair(K fst, V snd) { 
+        this.fst = fst;
+        this.snd = snd;
+    }
+}
 
 class LetterCounter {
-
-    class Pair<K, V> {
-        public K fst;
-        public V snd;
-        public Pair(K fst, V snd) {
-            this.fst = fst;
-            this.snd = snd;
-        }
-    }
 
     ArrayList<Pair<Character, Integer>>[] lst; // each pair contains character, int
 
