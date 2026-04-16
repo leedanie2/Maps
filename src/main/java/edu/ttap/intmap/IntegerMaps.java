@@ -9,13 +9,12 @@ import java.util.Set;
 import java.util.TreeSet;
  
 /**
- * A collection of  methods for counting and reporting character
- * frequencies in text files
+ * Counting and reporting character frequencies in text files
  */
 public class IntegerMaps {
  
     /**
-     * Counts occurrences of each letter in the file at the given path
+     * Counts occurences of each letter in the file at the given path
      * and prints the counts in alphabetical order
      *
      * @param path the path to the text file
@@ -35,7 +34,7 @@ public class IntegerMaps {
  
     /**
      * Use the LetterCounter method to write reportCounts.
-     * Count occurrences of each character in the file and prints the
+     * Count occurences of each character in the file and prints the
      * number of occurence along the character
      *
      * @param path the path to the text file
@@ -82,8 +81,7 @@ public class IntegerMaps {
  
     /**
      * Counts and prints all unique characters in the file
-     * then print out the resutl, after that return
-     * the total number of unique characters
+     * after that return the total number of unique characters
      *
      * @param path the path to the text file
      * @return the number of distinct characters found in the file
@@ -103,10 +101,10 @@ public class IntegerMaps {
     }
  
     /**
-     * Accepts a file path as the first argument and prints
-     * all unique characters found in the file
+     * Accepts a file path as the first argument
+     * prints the frequency of every character
      *
-     * @param args command-line arguments; args[0] should be the file path
+     * @param args command-line arguments
      * @throws FileNotFoundException if the file does not exist
      */
     public static void main(String[] args) throws FileNotFoundException {
@@ -116,8 +114,8 @@ public class IntegerMaps {
 }
  
 /**
- * A generic pair holding two values of potentially different types.
- *
+ * Stores two related values
+ * 
  * @param <K> the type of the first element
  * @param <V> the type of the second element
  */
@@ -138,7 +136,6 @@ class Pair<K, V> {
  */
 class LetterCounter {
  
-    /** Each bucket holds a list of (character, count) pairs. */
     ArrayList<Pair<Character, Integer>>[] lst;
  
     /**

@@ -7,15 +7,15 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * An association list is an implementation of a map via a list of key-value pairs.
+ * an implementation of a map with a list of key-value pairs.
  */
 public class AssociationList<K, V> implements Map<K, V> {
 
     /**
-     * Represents a key-value pair with a first and second element.
+     * Store a key-value pair with a first and second element.
      *
-     * @param <K> the type of the first element (key)
-     * @param <V> the type of the second element (value)
+     * @param <K> the type of the first element
+     * @param <V> the type of the second element
      */
     public class Pair {
 
