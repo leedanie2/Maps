@@ -14,10 +14,11 @@ public class Main {
      */
     public void main(String[] args) throws IOException {
         /*String[] enc = new String[]{"encrypt", "example-cipher.txt", "wikipedia.txt"};
-        String[] dec = new String[]{"decrypt", "example-cipher.txt", "wikipedia-encrypted-example.txt"};
+        String[] dec = new String[]{"decrypt", 
+            "example-cipher.txt", "wikipedia-encrypted-example.txt"};
         SubstitutionCipher.main(dec);
         */
-       String[] arr = new String[]{"plato.txt"};
-       IntegerMaps.main(arr);
+        String[] arr = new String[]{"plato.txt"};
+        IntegerMaps.main(arr);
     }
 }

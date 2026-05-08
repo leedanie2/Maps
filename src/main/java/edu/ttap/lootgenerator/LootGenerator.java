@@ -122,7 +122,7 @@ public class LootGenerator {
      *
      * @param armor     the name of the armor piece to look up
      * @param armorHash the map of armor names to Armor
-     * @return a string in the format "Defense: <value>"
+     * @return a string in the format "Defense: value"
      */
     public static String getStat(String armor, HashMap<String, Armor> armorHash) {
         Armor piece = armorHash.get(armor);

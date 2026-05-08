@@ -1,6 +1,6 @@
-# (_TODO: fill in the title of this assignment here!_)
+# Loot Generator
 
-Authors: (_TODO: fill in your names here!_)
+Authors: Risa Takemoto, Daniel Lee, Thomas bao
 
 ## Build commands
 
