@@ -193,7 +193,12 @@ public class LootGenerator {
      * @throws FileNotFoundException if any required data file is missing from the given directory
      */
     public static void main(String[] args) throws FileNotFoundException {
-        String datatype = args[0]; // data/large or data/small
+        String datatype;
+        if (args.length > 0) {
+            datatype = args[0]; // data/large or data/small
+        } else {
+            datatype = DATA_SET;
+        }
         ArrayList<Monster> monsterList = monsterList(datatype + "/monstats.txt");
         HashMap<String, TreasureClass> treasureHash
             = treasureHash(datatype + "/TreasureClassEx.txt");
